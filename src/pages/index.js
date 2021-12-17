@@ -23,6 +23,15 @@ const C = styled.div`
   opacity: 0.2;
 `
 
+const Spin = styled.div`
+  animation:spin 12s linear infinite;
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`
+
 const X = styled.div`
   animation: x 30s linear infinite alternate;
   width: 100px;
@@ -52,7 +61,9 @@ const IndexPage = () => (
       <C>
         <X>
           <Y>
-            <ReactLogo />
+            <Spin>
+              <ReactLogo />
+            </Spin>
           </Y>
         </X>
       </C>
