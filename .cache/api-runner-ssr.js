@@ -14,6 +14,10 @@ var plugins = [{
       name: 'gatsby-plugin-react-helmet',
       plugin: require('/Users/sampsa/Projects/sampsasaari.dev/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      name: 'gatsby-plugin-google-fonts',
+      plugin: require('/Users/sampsa/Projects/sampsasaari.dev/node_modules/gatsby-plugin-google-fonts/gatsby-ssr'),
+      options: {"plugins":[],"fonts":["Work Sans"],"display":"swap"},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:

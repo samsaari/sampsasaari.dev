@@ -23,5 +23,12 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Work Sans`],
+        display: 'swap',
+      },
+    }
   ],
 };
