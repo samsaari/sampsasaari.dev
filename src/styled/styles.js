@@ -37,4 +37,13 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     color: #fff;
   }
+
+  .fade-in {
+    transition: opacity 0.5s ease;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
   `
