@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import Template from '../templates/template'
-import { ReactLogo } from '../components/graphic';
+import FloatingLogo from '../components/floating-logo'
 
 const Container = styled.div`
   display: flex;
@@ -10,71 +10,78 @@ const Container = styled.div`
   height: 100vh;
 `
 const Content = styled.div`
-  text-align: center;
   padding: 1rem 2rem 10rem 2rem;
 `
 
-const Heading = styled.h1`
+const Heading1 = styled.h1`
   padding-bottom: 2rem;
+  color: #fff;
+  font-size: 3rem;
 `
 
-const C = styled.div`
-  position: absolute;
-  opacity: 0.2;
+const Heading2 = styled.h2`
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
 `
 
-const Spin = styled.div`
-  animation:spin 12s linear infinite;
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
+const Heading3 = styled.h3`
+  padding-bottom: 3rem;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: bold;
+`
+
+const IndexPage = () => {
+  const [greeting, setGreeting] = useState('Hello')
+  const [fade, setFade] = useState(false)
+
+  useEffect(() => {
+    const greetings = ['Hei', 'Hola', 'Hello', 'Bonjour', 'Kalimera', 'Ciao', 'Konnichiwa', 'Hej', 'Selam', 'Hallo']
+
+    const getGreeting = () => { 
+      const newGreeting = greetings[Math.floor(Math.random()*greetings.length)]
+      if (newGreeting === greeting) {
+        return getGreeting()
+      } else {
+        return newGreeting
+      }
     }
-  }
-`
 
-const X = styled.div`
-  animation: x 30s linear infinite alternate;
-  width: 100px;
-  height: 100px;
-
-  @keyframes x {
-    100% {
-      transform: translateX( calc(100vw - 100px) )
+    const fadeOut = () => {
+      return new Promise((resolve) => {
+        setFade(!fade)
+        setTimeout(() => {
+            resolve()
+        }, 500)
+      })
     }
-  }
-`
 
-const Y = styled.div`
-  width: 100px;
-  height: 100px;
-  animation: y 19s linear infinite alternate;
+    const timer = setInterval(async () => {
+        await fadeOut()
+        const newGreeting = getGreeting() 
+        setFade(false)
+        setGreeting(newGreeting)
+    }, 4000)
 
-  @keyframes y {
-    100% {
-      transform: translateY( calc(100vh - 100px) )
-    }
-  }
-`
+    return () => clearInterval(timer)
+  }, [fade, greeting])
 
-const IndexPage = () => (
+  return (
+    <>
     <Template>
-      <C>
-        <X>
-          <Y>
-            <Spin>
-              <ReactLogo />
-            </Spin>
-          </Y>
-        </X>
-      </C>
+      <FloatingLogo />
       <Container>
         <Content>
-          <Heading>Hi! I'm Sampsa.</Heading>
+          <Heading1 className={fade ? 'fade-out' : 'fade-in'}>{greeting}!</Heading1>
+          <Heading2>My name is</Heading2>
+          <Heading3>Sampsa Saari</Heading3>
           <p>I'm a Web developer based in Oulu, Finland.</p>
         </Content>
       </Container>
     </Template>
-);
+    </>
+)}
 
-export default IndexPage;
+export default IndexPage
 
