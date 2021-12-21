@@ -16,28 +16,28 @@ const Content = styled.div`
 const Heading1 = styled.h1`
   padding-bottom: 0.25rem;
   color: rgb(255 255 255 / 80%);
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: bold;
   letter-spacing: 0.25rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 `
 
 const Heading2 = styled.h2`
   color: rgba(255, 255, 255, 0.8);
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.35rem;
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
   // border-bottom: 2px solid var(--yellow);
   display: inline-block;
+  font-weight: bold;
 
   @media screen and (max-width: 1200px) {
-    font-size: 1.75rem;
+    font-size: 1.45rem;
   }
 
   @media screen and (max-width: 768px) {
