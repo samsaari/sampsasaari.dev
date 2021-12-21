@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Typist from "react-typist";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
 
 const Content = styled.div`
   padding: 1rem 2rem 10rem 2rem;
@@ -80,22 +80,28 @@ const greetings = [
   "Salut, je suis",
   "Hej, jag heter",
   "Yassou, me lene",
-  "Hi, I'm"
+  "Hi, I'm",
 ];
 
 const Hero = () => (
   <Content>
-    <Heading1>
-      <Typist>
-        <Typist.Delay ms={1000} />
-        {greetings.map((greeting, i) => (
-          <span key={i}>
-            <span>{greeting}</span>
-            {i < greetings.length - 1 ? <Typist.Backspace count={greeting.length} delay={4000} /> : <Typist.Delay ms={100} />}
-          </span>
-        ))}
-      </Typist>
-    </Heading1>
+    <Fade left>
+      <Heading1>
+        <Typist>
+          <Typist.Delay ms={1500} />
+          {greetings.map((greeting, i) => (
+            <span key={i}>
+              <span>{greeting}</span>
+              {i < greetings.length - 1 ? (
+                <Typist.Backspace count={greeting.length} delay={4000} />
+              ) : (
+                <Typist.Delay ms={500} />
+              )}
+            </span>
+          ))}
+        </Typist>
+      </Heading1>
+    </Fade>
     <Fade left>
       <Heading2>Sampsa Saari</Heading2>
     </Fade>
