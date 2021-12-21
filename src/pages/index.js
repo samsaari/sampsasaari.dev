@@ -74,6 +74,12 @@ const Heading4 = styled.h4`
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
   }
+
+  @media screen and (max-width: 467px) {
+    font-size: 1.35rem;
+    text-align: left;
+    padding-left: 3rem;
+  }
 `
 
 const IndexPage = () => {
