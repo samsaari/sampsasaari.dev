@@ -107,6 +107,8 @@ const Hero = () => (
     </Fade>
     <Fade bottom>
       <Heading3>Web Developer</Heading3>
+    </Fade>
+    <Fade bottom big>
       <Heading4>based in Oulu, Finland.</Heading4>
     </Fade>
   </Content>

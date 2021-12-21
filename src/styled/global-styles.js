@@ -24,7 +24,9 @@ const GlobalStyles = createGlobalStyle`
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--dark)
+    background-color: var(--dark);
+    // Remove later..
+    min-height: 120vh;
   }
 
   /* Headings. */
@@ -44,6 +46,23 @@ const GlobalStyles = createGlobalStyle`
   ::selection {
     background: var(--yellow);
     color: #000;
+  }
+
+  /* Scrollbar Styles */
+    body::-webkit-scrollbar {
+    width: 12px;
+  }
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--yellow) var(--dark);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--dark);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--yellow) ;
+    border-radius: 6px;
+    border: 3px solid var(--dark);
   }
 
   .fade-in {
