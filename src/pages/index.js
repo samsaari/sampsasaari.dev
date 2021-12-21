@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Typist from 'react-typist'
 import Template from '../templates/template'
-import FloatingLogo from '../components/floating-logo'
 
 const Container = styled.div`
   display: flex;
@@ -14,69 +14,93 @@ const Content = styled.div`
 `
 
 const Heading1 = styled.h1`
-  padding-bottom: 2rem;
-  color: #fff;
-  font-size: 3rem;
+  padding-bottom: 0.25rem;
+  color: rgb(255 255 255 / 80%);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `
 
 const Heading2 = styled.h2`
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 2rem;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  // border-bottom: 2px solid var(--yellow);
+  display: inline-block;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.75rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
 `
 
 const Heading3 = styled.h3`
-  padding-bottom: 3rem;
+  
   color: #fff;
-  font-size: 5rem;
+  font-size: 8.5rem;
   font-weight: bold;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 6rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+`
+
+const Heading4 = styled.h4`
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: right;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 2.25rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 const IndexPage = () => {
-  const [greeting, setGreeting] = useState('Hello')
-  const [fade, setFade] = useState(false)
-
-  useEffect(() => {
-    const greetings = ['Hei', 'Hola', 'Hello', 'Bonjour', 'Kalimera', 'Ciao', 'Konnichiwa', 'Hej', 'Selam', 'Hallo']
-
-    const getGreeting = () => { 
-      const newGreeting = greetings[Math.floor(Math.random()*greetings.length)]
-      if (newGreeting === greeting) {
-        return getGreeting()
-      } else {
-        return newGreeting
-      }
-    }
-
-    const fadeOut = () => {
-      return new Promise((resolve) => {
-        setFade(!fade)
-        setTimeout(() => {
-            resolve()
-        }, 500)
-      })
-    }
-
-    const timer = setInterval(async () => {
-        await fadeOut()
-        const newGreeting = getGreeting() 
-        setFade(false)
-        setGreeting(newGreeting)
-    }, 4000)
-
-    return () => clearInterval(timer)
-  }, [fade, greeting])
+  const greetings = ['Hei, olen', 'Hallo, ich bin', 'Salut, je suis', 'Hej, jag heter', 'Yassou, me lene']
 
   return (
     <>
     <Template>
-      <FloatingLogo />
       <Container>
         <Content>
-          <Heading1 className={fade ? 'fade-out' : 'fade-in'}>{greeting}!</Heading1>
-          <Heading2>My name is</Heading2>
-          <Heading3>Sampsa Saari</Heading3>
-          <p>I'm a Web developer based in Oulu, Finland.</p>
+          <Heading1>
+              <Typist>
+              <Typist.Delay ms={1000} />
+              <span>Hi, I'm</span>
+              <Typist.Backspace count={7} delay={4000} />
+              {greetings.map((greeting, i) => (
+                <span key={i}>
+                  <span>{greeting}</span>
+                  <Typist.Backspace count={greeting.length} delay={4000} />
+                </span>
+              ))}
+              <span>Hi, I'm</span>
+            </Typist>
+          </Heading1>
+          <Heading2>Sampsa Saari</Heading2>
+          <Heading3>Web Developer</Heading3>
+          <Heading4>based in Oulu, Finland.</Heading4>
         </Content>
       </Container>
     </Template>

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from "react-helmet"
-import { GlobalStyle } from '../styled/styles'
+import GlobalStyles from '../styled/global-styles'
 
 const Layout = ({ children }) => {
   return (
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
           <title>Sampsa Saari</title>
           <meta name="description" content="Web developer based in Oulu, Finland." />
       </Helmet>
-      <GlobalStyle />
+      <GlobalStyles />
       <main>{children}</main>
       {/* <Footer /> */}
     </>
