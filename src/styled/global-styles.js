@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --yellow: #ffc600;
+    --white: #fff;
     --dark: rgb(17, 17, 17);
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::selection {
-    background: var(--yellow);
+    background: var(--white);
     color: #000;
   }
 
@@ -54,13 +54,13 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--yellow) var(--dark);
+    scrollbar-color: var(--white) var(--dark);
   }
   body::-webkit-scrollbar-track {
     background: var(--dark);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--yellow) ;
+    background-color: var(--white) ;
     border-radius: 6px;
     border: 3px solid var(--dark);
   }
@@ -76,7 +76,7 @@ const GlobalStyles = createGlobalStyle`
 
   .Typist .Cursor {
     display: inline-block;
-    color: var(--yellow);
+    color: var(--white));
   }
   
   .Typist .Cursor--blinking {
