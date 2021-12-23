@@ -8,7 +8,7 @@ const C = styled.div`
 `
 
 const Spin = styled.div`
-  animation:spin 12s linear infinite;
+  animation: spin 12s linear infinite;
   @keyframes spin {
     100% {
       transform: rotate(360deg);
@@ -23,7 +23,7 @@ const X = styled.div`
 
   @keyframes x {
     100% {
-      transform: translateX( calc(100vw - 100px) )
+      transform: translateX(calc(100vw - 100px));
     }
   }
 `
@@ -35,21 +35,21 @@ const Y = styled.div`
 
   @keyframes y {
     100% {
-      transform: translateY( calc(100vh - 100px) )
+      transform: translateY(calc(100vh - 100px));
     }
   }
 `
 
 const FloatingLogo = () => (
   <C>
-        <X>
-          <Y>
-            <Spin>
-              <ReactLogo />
-            </Spin>
-          </Y>
-        </X>
-      </C>
+    <X>
+      <Y>
+        <Spin>
+          <ReactLogo />
+        </Spin>
+      </Y>
+    </X>
+  </C>
 )
 
 export default FloatingLogo

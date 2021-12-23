@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Typist from "react-typist";
-import Fade from "react-reveal/Fade";
+import React from 'react'
+import styled from 'styled-components'
+import Typist from 'react-typist'
+import Fade from 'react-reveal/Fade'
 
 const Content = styled.div`
   padding: 1rem 2rem 10rem 2rem;
-`;
+`
 
 const Heading1 = styled.h1`
   padding-bottom: 0.25rem;
@@ -17,7 +17,7 @@ const Heading1 = styled.h1`
   @media screen and (max-width: 768px) {
     font-size: 0.85rem;
   }
-`;
+`
 
 const Heading2 = styled.h2`
   color: rgba(255, 255, 255, 0.8);
@@ -36,7 +36,7 @@ const Heading2 = styled.h2`
     font-size: 1.25rem;
     margin-bottom: 1rem;
   }
-`;
+`
 
 const Heading3 = styled.h3`
   color: #fff;
@@ -50,7 +50,7 @@ const Heading3 = styled.h3`
   @media screen and (max-width: 768px) {
     font-size: 3.5rem;
   }
-`;
+`
 
 const Heading4 = styled.h4`
   font-size: 3rem;
@@ -71,17 +71,17 @@ const Heading4 = styled.h4`
     text-align: left;
     padding-left: 3rem;
   }
-`;
+`
 
 const greetings = [
   "Hi, I'm",
-  "Hei, olen",
-  "Hallo, ich bin",
-  "Salut, je suis",
-  "Hej, jag heter",
-  "Yassou, me lene",
+  'Hei, olen',
+  'Hallo, ich bin',
+  'Salut, je suis',
+  'Hej, jag heter',
+  'Yassou, me lene',
   "Hi, I'm",
-];
+]
 
 const Hero = () => (
   <Content>
@@ -112,6 +112,6 @@ const Hero = () => (
       <Heading4>based in Oulu, Finland.</Heading4>
     </Fade>
   </Content>
-);
+)
 
-export default Hero;
+export default Hero

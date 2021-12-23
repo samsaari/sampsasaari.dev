@@ -1,5 +1,5 @@
-import * as React from "react"
-import Template from "../templates/template"
+import * as React from 'react'
+import Template from '../templates/template'
 
 // markup
 const NotFoundPage = () => {

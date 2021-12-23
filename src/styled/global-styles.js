@@ -92,4 +92,5 @@ const GlobalStyles = createGlobalStyle`
     100% {
       opacity: 1; } }
   `
-  export default GlobalStyles;
+
+export default GlobalStyles
