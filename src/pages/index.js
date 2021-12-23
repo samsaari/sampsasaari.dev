@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Template from '../templates/template'
+import Layout from '../templates/layout'
 import Hero from '../components/hero'
 
 const Container = styled.div`
@@ -13,11 +13,11 @@ const Container = styled.div`
 const IndexPage = () => {
   return (
     <>
-      <Template>
+      <Layout>
         <Container>
           <Hero />
         </Container>
-      </Template>
+      </Layout>
     </>
   )
 }

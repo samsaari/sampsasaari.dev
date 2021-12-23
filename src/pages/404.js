@@ -1,12 +1,12 @@
 import * as React from 'react'
-import Template from '../templates/template'
+import Layout from '../templates/layout'
 
 // markup
 const NotFoundPage = () => {
   return (
-    <Template>
+    <Layout>
       <h1>Not found..</h1>
-    </Template>
+    </Layout>
   )
 }
 
